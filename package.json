@@ -1,0 +1,14 @@
+{
+  "name": "rnd-athlete-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RND Athlete official website: hero component, brand tokens and website blueprint.",
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.js -i src/input.css -o dist/styles.css --minify",
+    "dev": "tailwindcss -c tailwind.config.js -i src/input.css -o dist/styles.css --watch",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
