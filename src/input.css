@@ -55,3 +55,7 @@
   .motion-safe-only { display: none !important; }
   * { animation: none !important; transition: none !important; }
 }
+
+/* Journal: summary boxes are callouts, not quotations */
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after { content: none; }

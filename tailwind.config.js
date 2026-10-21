@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './shop/**/*.html', './lab/**/*.html', './src/**/*.{html,js}'],
+  content: ['./index.html', './shop/**/*.html', './lab/**/*.html', './journal/**/*.html', './about/*.html', './contact/*.html', './privacy/*.html', './terms/*.html', './scripts/*.py', './src/**/*.{html,js}'],
   theme: {
         extend: {
           colors: {
@@ -29,4 +29,5 @@ module.exports = {
           },
         },
       },
+  plugins: [require('@tailwindcss/typography')],
 };

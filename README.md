@@ -52,6 +52,24 @@ npm run serve    # local server at http://localhost:3000
 
 Run `npm run build` and commit `dist/styles.css` after any change to classes, `src/input.css` or `tailwind.config.js`.
 
+## Adding a Journal article
+
+1. Write a markdown file in `content/journal/<category>/<slug>.md` with front matter:
+
+   ```
+   ---
+   title: Article title
+   description: One-sentence summary for Google (under 160 characters)
+   date: 2026-10-21
+   category: Marathon Training
+   ---
+   ```
+
+2. Run `python3 scripts/build.py` (needs `pip install markdown`), then `npm run build`.
+3. Commit everything. The article, Journal index and `sitemap.xml` update automatically.
+
+About, Contact, Privacy and Terms live in `content/pages/` and build the same way.
+
 ## Upload to GitHub
 
 1. Create an empty repository on GitHub (no README, licence or .gitignore), for example `rnd-athlete-website`.
