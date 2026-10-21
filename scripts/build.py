@@ -21,6 +21,7 @@ import markdown
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://rndathletes.com"
 BRAND = "RND Athletes"
+ADSENSE_PUB = "ca-pub-6723626743879731"
 AUTHOR = "RND Athletes Team"
 
 # Pages that already exist as hand-built HTML (included in the sitemap).
@@ -118,6 +119,8 @@ def page(title, description, canonical, body, active="", jsonld=None):
   <meta property="og:site_name" content="{BRAND}" />
   <link rel="icon" type="image/png" href="/assets/brand/rnd-emblem-lowres.png" />
   <link rel="stylesheet" href="/dist/styles.css" />
+  <meta name="google-adsense-account" content="{ADSENSE_PUB}" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_PUB}" crossorigin="anonymous"></script>
 {ld}
 </head>
 <body class="bg-ink font-sans text-white antialiased">
@@ -235,6 +238,7 @@ def build():
     )
     write("sitemap.xml",
           f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n')
+    write("ads.txt", "google.com, " + ADSENSE_PUB.replace("ca-", "") + ", DIRECT, f08c47fec0942fa0\n")
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
     print(f"Built {len(articles)} articles, {len(sitemap)} sitemap URLs")
 
