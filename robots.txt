@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /content/
+Disallow: /scripts/
+Disallow: /src/
+Disallow: /docs/
+Disallow: /README.md
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /tailwind.config.js
 
 Sitemap: https://rndathletes.com/sitemap.xml

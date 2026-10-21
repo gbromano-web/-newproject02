@@ -99,12 +99,15 @@ PROSE = (
 )
 
 
-def page(title, description, canonical, body, active="", jsonld=None):
+def page(title, description, canonical, body, active="", jsonld=None, ads=True, robots=""):
     ld = ""
     if jsonld:
         ld = "\n".join(
             f'  <script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in jsonld
         )
+    adcode = (f'  <meta name="google-adsense-account" content="{ADSENSE_PUB}" />\n'
+              f'  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_PUB}" crossorigin="anonymous"></script>\n') if ads else ""
+    robots_tag = f'  <meta name="robots" content="{robots}" />\n' if robots else ""
     return f"""<!doctype html>
 <html lang="en" class="bg-ink">
 <head>
@@ -119,9 +122,7 @@ def page(title, description, canonical, body, active="", jsonld=None):
   <meta property="og:site_name" content="{BRAND}" />
   <link rel="icon" type="image/png" href="/assets/brand/rnd-emblem-lowres.png" />
   <link rel="stylesheet" href="/dist/styles.css" />
-  <meta name="google-adsense-account" content="{ADSENSE_PUB}" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_PUB}" crossorigin="anonymous"></script>
-{ld}
+{adcode}{robots_tag}{ld}
 </head>
 <body class="bg-ink font-sans text-white antialiased">
 {header(active)}
@@ -239,7 +240,22 @@ def build():
     write("sitemap.xml",
           f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n')
     write("ads.txt", "google.com, " + ADSENSE_PUB.replace("ca-", "") + ", DIRECT, f08c47fec0942fa0\n")
-    write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    write("robots.txt",
+          "User-agent: *\nAllow: /\n"
+          "Disallow: /content/\nDisallow: /scripts/\nDisallow: /src/\nDisallow: /docs/\n"
+          "Disallow: /README.md\nDisallow: /package.json\nDisallow: /package-lock.json\nDisallow: /tailwind.config.js\n"
+          f"\nSitemap: {SITE}/sitemap.xml\n")
+    # 404 page: no ads (not allowed on error pages), not indexed
+    nf = """  <main class="mx-auto max-w-3xl px-4 py-20 sm:px-6 md:py-28">
+    <p class="font-mono text-xs uppercase tracking-[0.22em] text-smoke">Error 404</p>
+    <h1 class="mt-4 font-display text-5xl font-black uppercase italic leading-[0.92] sm:text-6xl">Wrong turn.</h1>
+    <p class="mt-6 text-lg text-white/80">This page doesn't exist or has moved. Try the Journal for training plans, pace charts and race guides.</p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a href="/journal/" class="inline-flex h-14 items-center justify-center rounded-sm bg-white px-8 font-display text-base font-extrabold uppercase italic tracking-wide text-ink transition hover:bg-chalk">Go to the Journal</a>
+      <a href="/" class="inline-flex h-14 items-center justify-center rounded-sm border-2 border-white px-8 font-display text-base font-extrabold uppercase italic tracking-wide transition hover:bg-white hover:text-ink">Back to home</a>
+    </div>
+  </main>"""
+    write("404.html", page(f"Page not found | {BRAND}", "Page not found.", "/404.html", nf, ads=False, robots="noindex"))
     print(f"Built {len(articles)} articles, {len(sitemap)} sitemap URLs")
 
 

@@ -4,8 +4,6 @@ Official website for **RND Athlete**: research-driven performance gear for runne
 
 This repository holds the brand's website blueprint and the first production component, the homepage hero, built with HTML and Tailwind CSS in the black-and-white palette of the RND Athlete logo.
 
-![Hero on desktop](docs/screenshots/rnd-hero-desktop.png)
-
 ## What's inside
 
 | Path | What it is |
@@ -14,13 +12,12 @@ This repository holds the brand's website blueprint and the first production com
 | `dist/styles.css` | Compiled, minified Tailwind CSS. Committed so the site runs without a build |
 | `src/input.css` | Tailwind source: font faces, Tailwind layers, hero effects |
 | `tailwind.config.js` | Brand tokens: colours, fonts, animations |
-| `prototype/hero-cdn.html` | Single-file version of the hero using the Tailwind CDN, for quick experiments |
 | `assets/brand/` | Logo banner and emblem (low resolution, see "Before launch") |
 | `assets/fonts/` | Archivo, Inter and JetBrains Mono (SIL Open Font License) |
+| `content/` | Markdown source for Journal articles and About/Contact/Privacy/Terms |
+| `scripts/build.py` | Generates pages, `sitemap.xml`, `robots.txt`, `ads.txt` and `404.html` from `content/` |
+| `.nojekyll` | Stops GitHub Pages turning source markdown into duplicate public pages |
 | `assets/img/hero-poster.jpg` | Placeholder hero still cropped from the brand banner |
-| `docs/website-blueprint.md` | Full website blueprint: brand system, homepage, PDP, Run Club, navigation, footer |
-| `docs/screenshots/` | Hero at desktop, tablet, mobile and the CTA hover state |
-| `.github/workflows/deploy.yml` | Publishes the site to GitHub Pages on every push to `main` |
 
 ## Brand tokens
 
@@ -81,14 +78,14 @@ About, Contact, Privacy and Terms live in `content/pages/` and build the same wa
    git push -u origin main
    ```
 
-3. To publish it, go to the repository's **Settings → Pages** and set **Source** to **GitHub Actions**. The included workflow deploys every push to `main`, and the site appears at `https://<your-username>.github.io/rnd-athlete-website/`.
+3. The site is published by GitHub Pages from the `main` branch (root) at https://rndathletes.com. Every push to `main` goes live within a few minutes.
 
 ## Before launch
 
 - [ ] Replace `assets/brand/` files with the logo as SVG (emblem and wordmark).
 - [ ] Replace `assets/img/hero-poster.jpg` with a full-resolution black-and-white hero still, and add `assets/video/hero-loop.webm` and `.mp4` (6–10 s, under 3 MB).
 - [ ] Replace placeholder stats, product specs, prices and testimonials with real, verified content.
-- [ ] Build the remaining sections from `docs/website-blueprint.md`: navigation, category grid, Lab section, bestsellers, social proof, Run Club, footer.
+- [ ] Build the remaining store sections from the website blueprint doc: category grid, bestsellers, social proof, Run Club.
 
 ## Licence
 
