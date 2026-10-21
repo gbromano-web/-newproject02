@@ -34,7 +34,7 @@ Every session in the plan uses one of five zones. Set your watch to show these a
 | Threshold | 5:10–5:20 | 8:19–8:35 | Comfortably hard, a few words | Tempo runs |
 | Interval | 4:45–4:55 | 7:39–7:55 | Hard, no talking | 800 m–1.6 km repeats |
 
-If it's hot or humid, ignore pace and run easy days by effort. Pace typically drops 10–20 seconds per km in 25°C+ heat, and fighting that is how runners overtrain.
+If it's hot or humid, ignore pace and run easy days by effort (see [marathon training in hot weather](/journal/marathon-training/marathon-training-in-hot-weather/)). Pace typically drops 10–20 seconds per km in 25°C+ heat, and fighting that is how runners overtrain.
 
 ## The 16-week plan
 
@@ -54,7 +54,7 @@ The hardest block. Long runs carry marathon-pace finishes so your legs learn goa
 
 ### Phase 4: Taper (weeks 14–16)
 
-Volume drops by about 20%, 40% and 65%. Intensity stays, so you keep sharpness while fatigue clears.
+Volume drops by about 20%, 40% and 65%. Intensity stays, so you keep sharpness while fatigue clears. Our guide to [how to taper for a marathon](/journal/marathon-training/how-to-taper-for-a-marathon/) explains why.
 
 | Week | Weekly km (mi) | Quality session | Marathon-pace work | Long run |
 | --- | --- | --- | --- | --- |
@@ -102,6 +102,8 @@ A sub-4 marathon burns roughly 2,600–3,000 kcal for most runners, far more tha
 - **Sodium:** 300–600 mg per hour in warm conditions, from electrolyte drinks or capsules.
 - **Practise it:** use your exact race-day gels on every long run from week 6. The gut adapts to carbohydrate intake the way muscles adapt to training.
 
+For a gel-by-gel timeline, see our [marathon fueling plan](/journal/marathon-training/marathon-fueling-plan/).
+
 ## The gear that matters for sub-4
 
 You don't need much, but these four items directly affect your result.
@@ -113,7 +115,7 @@ You don't need much, but these four items directly affect your result.
 | Gels and electrolytes | Prevents the wall after 30 km | 25 g or more of carbohydrate per gel, a flavour you tolerate |
 | Carry system | Lets you fuel on your schedule, not the aid stations' | No bounce and easy access at pace: a race belt or shorts with gel pockets |
 
-Chafing and overheating end more sub-4 attempts in the final 10 km than a lack of fitness. Whatever you wear, wear it on your week 11 and week 13 long runs first.
+Chafing and overheating end more sub-4 attempts in the final 10 km than a lack of fitness. Whatever you wear, wear it on your week 11 and week 13 long runs first. Our [race-day kit checklist](/journal/marathon-training/what-to-wear-for-a-marathon/) covers every weather.
 
 ## Five mistakes that cost runners their sub-4
 
