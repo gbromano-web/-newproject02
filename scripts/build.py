@@ -67,8 +67,7 @@ def header(active=""):
       </a>
       <nav class="flex items-center gap-5 whitespace-nowrap font-display text-sm font-extrabold uppercase italic tracking-wide sm:gap-6">
         {link('/journal/', 'Journal', 'journal')}
-        {link('/shop/running/', 'Shop', 'shop')}
-        {link('/lab/', 'The Lab', 'lab')}
+        {link('/about/', 'About', 'about')}
       </nav>
     </div>
   </header>"""
@@ -79,6 +78,8 @@ FOOTER = f"""  <footer class="border-t border-graphite">
       <p>&copy; {datetime.date.today().year} {BRAND}. All rights reserved.</p>
       <nav class="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer">
         <a href="/journal/" class="hover:text-white">Journal</a>
+        <a href="/shop/running/" class="hover:text-white">Shop</a>
+        <a href="/lab/" class="hover:text-white">The Lab</a>
         <a href="/about/" class="hover:text-white">About</a>
         <a href="/contact/" class="hover:text-white">Contact</a>
         <a href="/privacy/" class="hover:text-white">Privacy Policy</a>
@@ -230,7 +231,7 @@ def build():
 {md_to_html(body)}
     </div>
   </main>"""
-        write(f"{md.stem}/index.html", page(f"{meta['title']} | {BRAND}", meta.get("description", ""), url, content))
+        write(f"{md.stem}/index.html", page(f"{meta['title']} | {BRAND}", meta.get("description", ""), url, content, "about" if md.stem == "about" else ""))
         sitemap.append((url, updated))
 
     # sitemap.xml + robots.txt
